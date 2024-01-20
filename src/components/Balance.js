@@ -18,7 +18,7 @@ export const Balance = () => {
     <>
       <h4>Your Balance</h4>
       <h1>
-        {sign}${total}
+        {sign}${Math.abs(total)}
       </h1>
     </>
   );
