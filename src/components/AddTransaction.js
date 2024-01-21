@@ -10,16 +10,20 @@ export const AddTransaction = () => {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    const newTransaction = {
-      id: Math.floor(Math.random() * 1000000000),
-      text: text,
-      amount: parseFloat(amount),
-    };
+    if (!isNaN(amount) && parseFloat(amount) !== 0) {
+      const newTransaction = {
+        id: Math.floor(Math.random() * 1000000000),
+        text: text,
+        amount: parseFloat(amount),
+      };
 
-    addTransaction(newTransaction);
+      addTransaction(newTransaction);
 
-    setText("");
-    setAmount("");
+      setText("");
+      setAmount("");
+    } else {
+      alert("Please enter a valid amount.");
+    }
   };
 
   return (
@@ -41,7 +45,7 @@ export const AddTransaction = () => {
             (negative - expense, positive - income)
           </label>
           <input
-            type="number"
+            type="text"
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             placeholder="Enter amount..."
