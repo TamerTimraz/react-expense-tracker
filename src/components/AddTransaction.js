@@ -1,16 +1,22 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
+// Functional component for adding transactions
 export const AddTransaction = () => {
+  // State variables for text and amount using React Hooks
   const [text, setText] = useState("");
   const [amount, setAmount] = useState("");
 
+  // Accessing the addTransaction function from the GlobalContext
   const { addTransaction } = useContext(GlobalContext);
 
+  // Function to handle form submission
   const onSubmit = (e) => {
     e.preventDefault();
 
+    // Check if the entered amount is a valid number and not zero
     if (!isNaN(amount) && parseFloat(amount) !== 0) {
+      // Creating a new transaction object
       const newTransaction = {
         id: Math.floor(Math.random() * 1000000000),
         text: text,
@@ -19,6 +25,7 @@ export const AddTransaction = () => {
 
       addTransaction(newTransaction);
 
+      // Clearing the input fields after a successful transaction
       setText("");
       setAmount("");
     } else {

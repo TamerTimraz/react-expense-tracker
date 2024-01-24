@@ -1,16 +1,20 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
 
+// Functional component to display income and expenses summary
 export const IncomeExpenses = () => {
+  // Accessing the transactions array for the GlobalContext
   const { transactions } = useContext(GlobalContext);
 
   const amounts = transactions.map((transaction) => transaction.amount);
 
+  // Calculate total income by summing positive amounts
   const income = amounts
     .filter((item) => item > 0)
     .reduce((acc, item) => (acc += item), 0)
     .toFixed(2);
 
+  // Calculate total expenses by summing negative amounts
   const expense = (
     amounts.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0) *
     -1

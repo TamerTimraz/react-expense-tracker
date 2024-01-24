@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+// Functional component for toggling dark mode
 export const DarkMode = () => {
   // State to track the current dark mode status
   const [isDarkMode, setIsDarkMode] = useState(

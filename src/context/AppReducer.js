@@ -1,3 +1,4 @@
+// Reducer function for managing state changes in the application
 export default (state, action) => {
   switch (action.type) {
     case "DELETE_TRANSACTION":
