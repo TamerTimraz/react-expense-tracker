@@ -16,5 +16,5 @@ exports.addTransaction = (req, res, next) => {
 // @route  DELETE /api/v1/transactions/:id
 // @access Public
 exports.deleteTransaction = (req, res, next) => {
-  res.send("DELETE transactions");
+  res.send("DELETE transaction");
 };
