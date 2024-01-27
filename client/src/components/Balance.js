@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import { numberWithCommas } from "../utils/format";
 
 // Functional component to display the total balance
 export const Balance = () => {
@@ -15,9 +16,9 @@ export const Balance = () => {
   let formattedTotal;
   if (total < 0) {
     sign = "-";
-    formattedTotal = Math.abs(total).toFixed(2);
+    formattedTotal = numberWithCommas(Math.abs(total).toFixed(2));
   } else {
-    formattedTotal = total.toFixed(2);
+    formattedTotal = numberWithCommas(total.toFixed(2));
   }
 
   return (

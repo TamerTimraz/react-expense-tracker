@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalState";
+import { numberWithCommas } from "../utils/format";
 
 // Functional component to display a single transaction
 export const Transaction = ({ transaction }) => {
@@ -12,9 +13,9 @@ export const Transaction = ({ transaction }) => {
   // Format the transaction amount with two decimal places
   let formattedAmount;
   if (transaction.amount < 0) {
-    formattedAmount = Math.abs(transaction.amount).toFixed(2);
+    formattedAmount = numberWithCommas(Math.abs(transaction.amount).toFixed(2));
   } else {
-    formattedAmount = transaction.amount.toFixed(2);
+    formattedAmount = numberWithCommas(transaction.amount.toFixed(2));
   }
 
   return (
