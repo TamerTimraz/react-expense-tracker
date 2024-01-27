@@ -1,6 +1,11 @@
 // Reducer function for managing state changes in the application
 export default (state, action) => {
   switch (action.type) {
+    case "GET_TRANSACTIONS":
+      return {
+        ...state,
+        transactions: action.payload,
+      };
     case "DELETE_TRANSACTION":
       return {
         ...state,
@@ -11,7 +16,12 @@ export default (state, action) => {
     case "ADD_TRANSACTION":
       return {
         ...state,
-        transactions: [action.payload, ...state.transactions],
+        transactions: [...state.transactions, action.payload],
+      };
+    case "TRANSACTION_ERROR":
+      return {
+        ...state,
+        error: action.payload,
       };
     default:
       return state;
