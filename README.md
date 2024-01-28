@@ -20,18 +20,22 @@ The total balance is dynamically calculated and updated with each transaction. Y
 
 We understand that preferences vary, so the application includes a Dark Mode feature. Switch between light and dark themes to suit your visual preferences.
 
+## Backend:
+
+The backend of this application is built using Node.js, Express.js, and MongoDB.
+
 ## Getting Started:
 
 1. Clone the Repository:
 
 ```bash
-git clone https://github.com/your-username/expense-tracker.git
+git clone https://github.com/TamerTimraz/react-expense-tracker.git
 ```
 
 2. Navigate to the Project Directory:
 
 ```bash
-cd expense-tracker
+cd react-expense-tracker
 ```
 
 3. Install Dependencies:
@@ -40,10 +44,25 @@ cd expense-tracker
 npm install
 ```
 
-4. Run the Application:
+4. Set up Database:
+
+   1. Create an Account:
+      - Visit [MongoDB Atlas](https://www.mongodb.com/atlas) and create an account.
+   2. Create a New Cluster:
+      - After logging in to MongoDB Atlas, click the "Build a Cluster" button to create a new cluster.
+      - Choose a cloud provider, region, and cluster configuration that best fits your needs. You can select the free tier cluster for testing and development purposes.
+   3. Deploy Cluster:
+      - Click the "Create Cluster" button to deploy your cluster. MongoDB Atlas will provision resources on your selected cloud provider and deploy your cluster.
+   4. Connect to your Cluster:
+      - Click the "Connect" button for your cluster and choose to connect with drivers.
+      - Copy your connection string and paste it where applicable in the program.
+
+5. Run the Application:
 
 ```bash
-npm start
+npm run dev
 ```
 
-The application will be accessible at http://localhost:3000 in your web browser.
+This will run both the frontend and backend servers concurrently.
+
+#### The application will be accessible at http://localhost:3000 in your web browser.
